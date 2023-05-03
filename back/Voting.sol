@@ -1,7 +1,6 @@
 pragma solidity 0.8.19;
 import "@openzeppelin/contracts/access/Ownable.sol";
 contract Voting is Ownable {
-    uint winningProposalId;
     enum WorkflowStatus {
         RegisteringVoters,
         ProposalsRegistrationStarted,
@@ -19,6 +18,50 @@ contract Voting is Ownable {
         string description;
         uint voteCount;
     }
+    WorkflowStatus public status;
+    uint winningProposalId;
+    mapping(address => Voter) public voters;
+    Proposal[] public proposals;
+
+    modifier onlyRegisteredVoter() {
+        require(voters[msg.sender].isRegistered, "You are not Registered");
+        _;
+    }
+    modifier onlyDuringStatus(WorkflowStatus _status){
+        require(status == _status,  "Invalid workflow status.");
+        _;
+    }
+    function startRegisteringVoters() public onlyOwner {
+        require(status == WorkflowStatus.VotesTallied, "Voting session has not ended yet.");
+        status = WorkflowStatus.RegisteringVoters;
+        emit WorkflowStatusChange(WorkflowStatus.VotesTallied, status);
+    }
+
+    function registerVoter(address _voter) public onlyOwner onlyDuringStatus(WorkflowStatus.RegisteringVoters) {
+        require(!voters[_voter].isRegistered, "Voter is already registered.");
+        voters[_voter].isRegistered = true;
+        emit VoterRegistered(_voter);
+    }
+
+    function endRegisteringVoters() public onlyOwner onlyDuringStatus(WorkflowStatus.RegisteringVoters) {
+        status = WorkflowStatus.ProposalsRegistrationStarted;
+        emit WorkflowStatusChange(WorkflowStatus.RegisteringVoters, status);
+    }
+    function registerProposal(string memory _description) public onlyRegisteredVoter onlyDuringStatus(WorkflowStatus.ProposalsRegistrationStarted) {
+        proposals.push(Proposal({description: _description, voteCount: 0}));
+        emit ProposalRegistered(proposals.length - 1);
+    }
+
+    function endProposalsRegistration() public onlyOwner onlyDuringStatus(WorkflowStatus.ProposalsRegistrationEnded) {
+        status = WorkflowStatus.VotingSessionStarted;
+        emit WorkflowStatusChange(WorkflowStatus.ProposalsRegistrationEnded, status);
+    }
+
+    function startVotingSession() public onlyOwner onlyDuringStatus(WorkflowStatus.VotingSessionStarted) {
+        status = WorkflowStatus.VotingSessionEnded;
+        emit WorkflowStatusChange(WorkflowStatus.VotingSessionStarted, status);
+    }
+
     event VoterRegistered(address voterAddress);
     event WorkflowStatusChange(WorkflowStatus previousStatus, WorkflowStatus newStatus);
     event ProposalRegistered(uint proposalId);
