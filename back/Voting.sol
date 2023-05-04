@@ -53,20 +53,49 @@ contract Voting is Ownable {
     }
 
     function endProposalsRegistration() public onlyOwner onlyDuringStatus(WorkflowStatus.ProposalsRegistrationEnded) {
+        require(proposals.length > 0, "No proposal was registered.");
         status = WorkflowStatus.VotingSessionStarted;
         emit WorkflowStatusChange(WorkflowStatus.ProposalsRegistrationEnded, status);
     }
 
     function startVotingSession() public onlyOwner onlyDuringStatus(WorkflowStatus.VotingSessionStarted) {
+        require(proposals.length > 0, "No proposal was registered.");
         status = WorkflowStatus.VotingSessionEnded;
         emit WorkflowStatusChange(WorkflowStatus.VotingSessionStarted, status);
     }
 
+    function vote(uint _proposalId) public onlyRegisteredVoter onlyDuringStatus(WorkflowStatus.VotingSessionStarted) {
+        require(!voters[msg.sender].hasVoted, "You have already voted.");
+        require(_proposalId < proposals.length, "Invalid proposal ID.");
+        voters[msg.sender].hasVoted = true;
+        voters[msg.sender].votedProposalId = _proposalId;
+        proposals[_proposalId].voteCount++;
+        emit Voted(msg.sender, _proposalId);
+    }
+
+    function endVotingSession() public onlyOwner onlyDuringStatus(WorkflowStatus.VotingSessionStarted) {
+        status = WorkflowStatus.VotingSessionEnded;
+        emit WorkflowStatusChange(WorkflowStatus.VotingSessionStarted, status);
+    }
+
+    function tallyVotes() public onlyOwner onlyDuringStatus(WorkflowStatus.VotingSessionEnded) {
+        uint winningVoteCount = 0;
+        for (uint i = 0; i < proposals.length; i++) {
+            if (proposals[i].voteCount > winningVoteCount) {
+                winningVoteCount = proposals[i].voteCount;
+                winningProposalId = i;
+            }
+        }
+        status = WorkflowStatus.VotesTallied;
+        emit WorkflowStatusChange(WorkflowStatus.VotingSessionEnded, status);
+    }
+
+    function getWinner() public view onlyDuringStatus(WorkflowStatus.VotesTallied) returns (uint) {
+        require(proposals.length > 0, "No proposal was registered.");
+        return winningProposalId;
+    }
     event VoterRegistered(address voterAddress);
     event WorkflowStatusChange(WorkflowStatus previousStatus, WorkflowStatus newStatus);
     event ProposalRegistered(uint proposalId);
     event Voted (address voter, uint proposalId);
-    function getWinner(){
-
-    }
 }
