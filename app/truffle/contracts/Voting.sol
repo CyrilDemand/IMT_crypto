@@ -1,4 +1,4 @@
-pragma solidity 0.8.19;
+pragma solidity 0.8.18;
 import "@openzeppelin/contracts/access/Ownable.sol";
 contract Voting is Ownable {
     enum WorkflowStatus {
