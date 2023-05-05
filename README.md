@@ -17,11 +17,17 @@ dans le dossier client :
 
 
 -----------------------Présentation du Groupe------------------------------
+
 Noé Delcroix : Front End
+
 Cyril Demand : Front End
+
 Alexis Bourdarias : Liaison entre le Back et le Front
+
 Lucas Senez : Liaison entre le Back et le Front
+
 Thomas Nigault : Back End
+
 Louis Clorennec : Back End
 
 Nous avons travaillé en méthode Scrum, nous avons utilisé git pour gérer les versions
