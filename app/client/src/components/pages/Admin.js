@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import WhiteList from "../components2/WhiteList";
 
 function Admin() {
     return (
@@ -12,6 +13,7 @@ function Admin() {
                     <Link to="/electeur">electeur</Link>
                 </li>
             </ul>
+            <WhiteList title={"WhiteList"}></WhiteList>
         </div>
     );
 }
