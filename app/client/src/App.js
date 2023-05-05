@@ -22,48 +22,49 @@ class App extends Component {
   componentDidMount = async () => {
     try {
       // Get network provider and web3 instance.
-      const web3 = await getWeb3()
-
-      // Use web3 to get the user's accounts.
-      /* on récupère le tableau des comptes sur le metamask du user */
-      const accounts = await web3.eth.getAccounts()
+      const web3 = await getWeb3();
 
       // Get the contract instance.
-      const networkId = await web3.eth.net.getId()
-      const deployedNetwork = Voting.networks[networkId]
-      console.log("deployedNetwork", deployedNetwork)
+      const networkId = await web3.eth.net.getId();
+      console.log("nid",networkId);
+      //if (!(networkId in Voting.networks)) {
+      //  throw new Error("Network ID not found in contract networks");
+      //}
+      const deployedNetwork = Voting.networks[networkId];
+      console.log("deployedNetwork", deployedNetwork);
       /* Création de l'objet de contrat avec l'abi, le deployedNetwork et son address  */
-      const instance = new web3.eth.Contract(
-        Voting.abi,
-        deployedNetwork && deployedNetwork.address
-      )
+      const contractInstance = new web3.eth.Contract(
+          Voting.abi,
+          deployedNetwork && deployedNetwork.address
+      );
 
-      // Set web3, accounts, and contract to the state, and then proceed with an
-      // example of interacting with the contract's methods.
-      this.setState({ web3, accounts, contract: instance })
+      // Use web3 to get the user's accounts.
+      const accounts = await web3.eth.getAccounts();
+      const userAccount = accounts[0];
+      console.log("userAccount", userAccount);
 
-      let account = this.state.accounts[0]
+      // Set web3, accounts, and contract to the state.
+      this.setState({ 
+          web3, 
+          accounts, 
+          contract: contractInstance,
+          userAddress: `${userAccount.slice(0, 6)}...${userAccount.slice(38, 42)}` // Format user account for display
+      });
 
-      this.setState({
-        userAddress: account.slice(0, 6) + "..." + account.slice(38, 42),
-      })
-
-			// Check if the user is the owner
-      const owner = await instance.methods.owner().call()
-      if (account === owner) {
-        this.setState({
-          isOwner: true,
-        })
+      // Check if the user is the owner
+      const owner = await contractInstance.methods.owner().call();
+      if (userAccount === owner) {
+          this.setState({ isOwner: true });
       }
 
-    } catch (error) {
+  } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
-        `Failed to load web3, accounts, or contract. Check console for details.`
-      )
-      console.error(error)
-    }
+          `Failed to load web3, accounts, or contract. Check console for details.`
+      );
+      console.error(error);
   }
+}
 
   render() {
 return (

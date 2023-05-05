@@ -1,4 +1,4 @@
-pragma solidity 0.8.18;
+pragma solidity ^0.8.18;
 import "@openzeppelin/contracts/access/Ownable.sol";
 contract Voting is Ownable {
     enum WorkflowStatus {
@@ -22,6 +22,7 @@ contract Voting is Ownable {
     uint winningProposalId;
     mapping(address => Voter) public voters;
     Proposal[] public proposals;
+    uint public networkId;
 
     modifier onlyRegisteredVoter() {
         require(voters[msg.sender].isRegistered, "You are not Registered");
@@ -31,6 +32,10 @@ contract Voting is Ownable {
         require(status == _status,  "Invalid workflow status.");
         _;
     }
+    constructor(uint _networkId){
+        networkId = _networkId;
+    }
+
     function startRegisteringVoters() public onlyOwner {
         require(status == WorkflowStatus.VotesTallied, "Voting session has not ended yet.");
         status = WorkflowStatus.RegisteringVoters;
