@@ -28,7 +28,7 @@ Alexis Bourdarias : Liaison entre le Back et le Front
 ![Cover](https://github.com/NicolasBrondin/NicolasBrondin/blob/master/img/cover.jpg)
 
 Lucas Senez : Liaison entre le Back et le Front
-![Cover](https://github.com/NicolasBrondin/NicolasBrondin/blob/master/img/cover.jpg)
+![Cover](https://cdn.discordapp.com/attachments/1102927913969533063/1104028976311189535/IMG_20230505_145648.jpg)
 
 Thomas Nigault : Back End
 ![Cover](https://cdn.discordapp.com/attachments/1102927913969533063/1104029862311772220/IMG_20230505_150008.jpg)
