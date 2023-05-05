@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 import WhiteList from "../components2/WhiteList";
+import SessionListAdmin from "../components2/SessionListAdmin";
 
 function Admin() {
     return (
@@ -14,6 +15,7 @@ function Admin() {
                 </li>
             </ul>
             <WhiteList title={"WhiteList"}></WhiteList>
+            <SessionListAdmin></SessionListAdmin>
         </div>
     );
 }
