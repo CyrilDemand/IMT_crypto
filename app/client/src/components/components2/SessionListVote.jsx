@@ -1,5 +1,6 @@
 import {useState} from "react";
 
+
 function SessionListVote() {
 
     const sessions=[{name:"s1",choices:["choix1","choix2","choix3"]},

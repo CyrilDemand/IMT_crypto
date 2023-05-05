@@ -1,4 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
+import '../../styles/electeur.css';
 
 function Main() {
     return (
