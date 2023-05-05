@@ -1,5 +1,6 @@
-const SimpleStorage = artifacts.require("Voting");
+const Voting = artifacts.require("Voting");
 
 module.exports = function (deployer) {
-  deployer.deploy(Voting);
+  deployer.deploy(Voting, 100);
 };
+
