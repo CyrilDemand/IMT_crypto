@@ -1,4 +1,5 @@
 import {useState} from "react";
+import SessionList from "./SessionList";
 
 function SessionListAdmin() {
 
@@ -19,12 +20,6 @@ function SessionListAdmin() {
             }])
         }
 
-    }
-
-    function deleteSession(session){
-        setSessionlist(sessionlist.filter(e=>{
-            return e!==session;
-        }))
     }
 
     function addChoix(monChoix) {
@@ -61,31 +56,7 @@ function SessionListAdmin() {
 
             </table>
             <button onClick={addSessions}>ajouter l'event</button>
-
-            <table>
-                <thead>
-                <tr>
-                    <th colSpan={"2"}>
-                        sessionList
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-
-                {sessionlist.map((s) => (
-                    <tr>
-                        <td>{s.name}</td>
-                        {
-                            s.choices.map((c) => (
-                                <td>{c}</td>
-                            ))
-                        }
-                        <td><button onClick={() => deleteSession(s)}>-</button></td>
-                    </tr>
-                ))}
-
-                </tbody>
-            </table>
+            <SessionList admin={true}></SessionList>
         </div>
     );
 }

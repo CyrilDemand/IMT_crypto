@@ -1,4 +1,5 @@
 import {useState} from "react";
+import SessionList from "./SessionList";
 
 
 function SessionListVote() {
@@ -35,6 +36,7 @@ function SessionListVote() {
 
                 </tbody>
             </table>
+            <SessionList admin={false}></SessionList>
         </div>
     );
 }
