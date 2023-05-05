@@ -16,12 +16,12 @@ function WhiteList({title}) {
     }
 
     return (
-        <div>
-            <h1>{title}</h1>
-            <input type={"text"} id={"whiteListInput"}/>
-            <button onClick={() => addWhiteListAddress(document.querySelector("#whiteListInput").value)}>+</button>
+        <div className={"whiteList"}>
+            <h1 className={"whiteListTitle"}>{title}</h1>
+            <input className={"whiteListInput"} type={"text"} id={"whiteListInput"}/>
+            <button className={"whiteListAddButton"} onClick={() => addWhiteListAddress(document.querySelector("#whiteListInput").value)}>+</button>
 
-            <table>
+            <table className={"whiteListTable"}>
                 <thead>
                     <tr>
                         <th colSpan={"2"}>

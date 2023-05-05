@@ -1,19 +1,15 @@
 import { Outlet, Link } from "react-router-dom";
 import '../../styles/electeur.css';
+import Nav from "../components2/Nav";
 
 function Main() {
     return (
-        <div>
-            <h1>main</h1>
-            <ul>
-                <li>
-                    <Link to="/admin">admin</Link>
-                </li>
-                <li>
-                    <Link to="/electeur">electeur</Link>
-                </li>
-            </ul>
+        <div className={"main"}>
+            <Nav links={[{link:"/admin",title:"Administrateur"},{link:"/electeur",title:"Electeur"}]}></Nav>
+            <h1 className={"mainTitle"}>Page d'accueil</h1>
         </div>
+
+
     );
 }
 

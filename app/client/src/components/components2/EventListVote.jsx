@@ -1,17 +1,17 @@
 import {useState} from "react";
-import SessionList from "./SessionList";
+import EventList from "./EventList";
 
 
-function SessionListVote() {
+function EventListVote() {
 
     const sessions=[{name:"s1",choices:["choix1","choix2","choix3"]},
                                         {name:"s2",choices:["choix1","choix2","choix3","choix4"]}];
 
     return (
-        <div>
-            <h1>Sessions à voter :</h1>
+        <div className={"eventListVote"}>
+            <h1 className={"eventListVoteTitle"}>Sessions à voter :</h1>
 
-            <table>
+            <table className={"eventListVoteTable"}>
                 <thead>
                 <tr>
                     <th>
@@ -36,9 +36,9 @@ function SessionListVote() {
 
                 </tbody>
             </table>
-            <SessionList admin={false}></SessionList>
+
         </div>
     );
 }
 
-export default SessionListVote;
+export default EventListVote;

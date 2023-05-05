@@ -1,20 +1,17 @@
 import {Link} from "react-router-dom";
 import WhiteList from "../components2/WhiteList";
-import SessionListVote from "../components2/SessionListVote";
+import EventListVote from "../components2/EventListVote";
+import EventList from "../components2/EventList";
+import Nav from "../components2/Nav";
 
 function Electeur() {
     return (
-        <div>
-            <h1>ELECTEUR</h1>
-            <ul>
-                <li>
-                    <Link to="/admin">admin</Link>
-                </li>
-                <li>
-                    <Link to="/">main</Link>
-                </li>
-            </ul>
-            <SessionListVote></SessionListVote>
+        <div className={"electeur"}>
+            <Nav links={[{link:"/",title:"Page d'acceuil"},{link:"/admin",title:"Administrateur"}]}></Nav>
+            <h1 className={"electeurTitle"}>Electeur</h1>
+
+            <EventListVote></EventListVote>
+            <EventList admin={false}></EventList>
         </div>
     );
 }

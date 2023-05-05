@@ -1,20 +1,20 @@
 import {useState} from "react";
-import SessionList from "./SessionList";
+import EventList from "./EventList";
 
-function SessionListAdmin() {
+function EventAdd() {
 
-    const [sessionlist, setSessionlist] = useState([]);
+    const [eventList, setEventList] = useState([]);
     const [choixAdd, setChoixAdd] = useState([]);
 
-    function addSessions() {
+    function addEvent() {
         let flag = true;
-        sessionlist.forEach(s => {
+        eventList.forEach(s => {
             if (s.name===document.querySelector("#nameInput").value){
                 flag =false
             }
         })
         if(flag){
-            setSessionlist(sessionlist => [...sessionlist, {
+            setEventList(sessionlist => [...sessionlist, {
                 name: document.querySelector("#nameInput").value,
                 choices: [...choixAdd]
             }])
@@ -32,16 +32,16 @@ function SessionListAdmin() {
             return e!==monChoix;
         }))    }
     return (
-        <div>
-            <h1>Liste d'événement</h1>
-            <span>nom de l'événement</span><input type={"text"} id={"nameInput"}/>
-            <span>choix</span><input type={"text"} id={"choixInput"}/>
-            <button onClick={() => addChoix(document.querySelector("#choixInput").value)}>ajouter un choix</button>
-            <table>
+        <div className={"eventAdd"}>
+            <h1 className={"eventAddTitle"}>Ajouter un évenement</h1>
+            <span className={"eventAddName"}>Nom : </span><input className={"eventAddNameInput"} type={"text"} id={"nameInput"}/>
+            <span className={"eventAddChoice"}>Choix : </span><input className={"eventAddChoiceInput"} type={"text"} id={"choixInput"}/>
+            <button onClick={() => addChoix(document.querySelector("#choixInput").value)}>Ajouter le choix</button>
+            <table className={"eventAddTable"}>
                 <thead>
                 <tr>
-                    <th colSpan={"2"}>
-                        choix de l'évènement à ajouter
+                    <th>
+                        Choix de l'évènement à ajouter :
                     </th>
                 </tr>
                 </thead>
@@ -55,10 +55,9 @@ function SessionListAdmin() {
                 </tbody>
 
             </table>
-            <button onClick={addSessions}>ajouter l'event</button>
-            <SessionList admin={true}></SessionList>
+            <button className={"eventAddCreateButton"} onClick={addEvent}>Créer l'évenement</button>
         </div>
     );
 }
 
-export default SessionListAdmin;
+export default EventAdd;
