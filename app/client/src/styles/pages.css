@@ -11,7 +11,7 @@ h1.adminTitle{
 /*
 WHITE LIST
  */
-.whiteList .whiteListTitle, .eventAdd .eventAddTitle, .eventList .eventListTitle, .eventListVoteTitle{
+.whiteList .whiteListTitle, .eventAdd .eventAddTitle, .eventList .eventListTitle, .eventListVoteTitle, .mainTitle{
     padding:5px;
     margin-bottom: 10px;
     margin-top: 20px;
@@ -178,6 +178,25 @@ EVENT LIST VOTE
     border-radius: 5px;
 }
 
+/*
+ACCUEIL
+ */
 
+.main p{
+    font-size: 2em;
+}
 
+.main .equipe{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
+.main .equipe div{
+    width:30vw;
+}
+
+.main .equipe img{
+    width:20vw;
+
+}

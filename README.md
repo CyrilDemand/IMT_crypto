@@ -12,27 +12,27 @@ Nous avons travaillé en méthode Scrum. Nous avons utilisé git pour gérer les
 
 **Noé Delcroix** : Front End
 <br>
-<img src="./app/client/src/img/noe.png"  width="150" height="150">
+<img src="./app/client/resources/noe.png"  width="150" height="150">
 
 **Cyril Demand** : Front End
 <br>
-<img src="./app/client/src/img/cyril.png"  width="150" height="150">
+<img src="./app/client/resources/cyril.png"  width="150" height="150">
 
 **Alexis Bourdarias** : Liaison entre le Back et le Front
 <br>
-<img src="./app/client/src/img/alexis.png"  width="150" height="150">
+<img src="./app/client/resources/alexis.png"  width="150" height="150">
 
 **Lucas Senez** : Liaison entre le Back et le Front
 <br>
-<img src="./app/client/src/img/lucas.png"  width="150" height="150">
+<img src="./app/client/resources/lucas.png"  width="150" height="150">
 
 **Thomas Nigault** : Back End et Scrum Master
 <br>
-<img src="./app/client/src/img/thomas.png"  width="150" height="150">
+<img src="./app/client/resources/thomas.png"  width="150" height="150">
 
 **Louis Clorennec** : Back End
 <br>
-<img src="./app/client/src/img/louis.png"  width="150" height="150">
+<img src="./app/client/resources/louis.png"  width="150" height="150">
 
 ## Instrutions pour lancer le projet en local
 

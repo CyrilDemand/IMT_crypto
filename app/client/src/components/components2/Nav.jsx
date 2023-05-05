@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 function Nav({links}){
     return(
         <header className={"header"}>
-            <h1 className={"headerTitle"}>Système de votes</h1>
+            <h1 className={"headerTitle"}>Application de votes</h1>
             <nav className={"navbar"}>
                 <ul>
                     {links.map((link) => (
