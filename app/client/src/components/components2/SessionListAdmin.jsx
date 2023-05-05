@@ -6,20 +6,31 @@ function SessionListAdmin() {
     const [choixAdd, setChoixAdd] = useState([]);
 
     function addSessions() {
-        setSessionlist(sessionlist => [...sessionlist, {
-            name: document.querySelector("#nameInput").value,
-            choices: [...choixAdd]
-        }])
+        let flag = true;
+        sessionlist.forEach(s => {
+            if (s.name===document.querySelector("#nameInput").value){
+                flag =false
+            }
+        })
+        if(flag){
+            setSessionlist(sessionlist => [...sessionlist, {
+                name: document.querySelector("#nameInput").value,
+                choices: [...choixAdd]
+            }])
+        }
+
     }
 
-    function deleteWhiteListAddress(session){
+    function deleteSession(session){
         setSessionlist(sessionlist.filter(e=>{
             return e!==session;
         }))
     }
 
     function addChoix(monChoix) {
-        setChoixAdd(choix => [...choix, monChoix])
+        if(!choixAdd.includes(monChoix)){
+            setChoixAdd(choix => [...choix, monChoix])
+        }
     }
     function deleteChoix(monChoix) {
         setChoixAdd(choixAdd.filter(e=>{
@@ -69,7 +80,7 @@ function SessionListAdmin() {
                                 <td>{c}</td>
                             ))
                         }
-                        <td><button onClick={() => deleteChoix(s)}>-</button></td>
+                        <td><button onClick={() => deleteSession(s)}>-</button></td>
                     </tr>
                 ))}
 
