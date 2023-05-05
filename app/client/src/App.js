@@ -3,6 +3,10 @@ import React, { Component } from "react"
 import Voting from "./contracts/Voting.json"
 import getWeb3 from "./getWeb3"
 import "./App.css"
+import Main from "./components/pages/Main";
+import Admin from "./components/pages/Admin";
+import Electeur from "./components/pages/Electeur";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 class App extends Component {
   state = {
@@ -64,8 +68,12 @@ class App extends Component {
   render() {
 return (
       <div className="App">
+
         <div className="flex flex-col justify-between min-h-screen">
           <div className="flex-1">
+            {
+              /*
+
             <header>
               <nav className="bg-yellow-10 border-yellow-30  z-50 fixed w-full">
                 <div className="sm:px-6 sm:py-3 md:px-8 md:py-6 flex flex-row items-center justify-between border border-b">
@@ -142,6 +150,18 @@ return (
                 </div>
               </nav>
             </header>
+
+               */
+            }
+            <BrowserRouter>
+              <Routes>
+                <Route path="/">
+                  <Route index element={<Main />} />
+                  <Route path="admin" element={<Admin />} />
+                  <Route path="electeur" element={<Electeur />} />
+                </Route>
+              </Routes>
+            </BrowserRouter>
          </div>
         </div>
         </div>
