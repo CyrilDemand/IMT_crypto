@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import '../../styles/electeur.css';
+import '../../styles/pages.css';
 import '../../styles/global.css';
 import Nav from "../components2/Nav";
 

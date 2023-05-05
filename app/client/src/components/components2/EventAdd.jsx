@@ -40,7 +40,7 @@ function EventAdd() {
             <table className={"eventAddTable"}>
                 <thead>
                 <tr>
-                    <th>
+                    <th colSpan={100}>
                         Choix de l'évènement à ajouter :
                     </th>
                 </tr>

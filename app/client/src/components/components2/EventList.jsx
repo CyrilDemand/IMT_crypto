@@ -23,7 +23,7 @@ function EventList({admin}){
                     <th>
                         Nom
                     </th>
-                    <th>
+                    <th colSpan={100}>
                         Choix
                     </th>
                 </tr>

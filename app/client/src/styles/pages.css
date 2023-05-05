@@ -1,0 +1,183 @@
+/*
+PAGE ADMIN
+ */
+
+h1.adminTitle{
+    padding:10px;
+    font-size: 3em;
+    color: darkblue;
+}
+
+/*
+WHITE LIST
+ */
+.whiteList .whiteListTitle, .eventAdd .eventAddTitle, .eventList .eventListTitle, .eventListVoteTitle{
+    padding:5px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 2em;
+    color: midnightblue;
+    border-bottom: 2px solid midnightblue;
+}
+
+.whiteList td{
+    border: 1px solid midnightblue;
+    margin: 2px;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+.whiteList th{
+    background: midnightblue;
+    color: whitesmoke;
+    font-size: 2em;
+    padding: 5px;
+}
+
+
+.whiteList td{
+    font-size: 1.5em;
+}
+
+.whiteList button{
+    background: #f5f5f5;
+    color: black;
+    border-radius: 5px;
+    font-size: 2em;
+    font-weight: 700;
+    width: 30px;
+}
+
+.whiteList input{
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid midnightblue;
+    margin: 3px;
+    margin-bottom: 20px;
+}
+
+.whiteListAddButton, .eventAdd .eventAddCreateButton {
+    background: midnightblue;
+    color: whitesmoke;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/*
+EVENT ADD
+ */
+.eventAdd table button{
+    background: #f5f5f5;
+    color: black;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 2em;
+    font-weight: 700;
+    width: 30px;
+}
+
+.eventAdd .eventAddCreateButton{
+    margin: 2em;
+    padding: 10px;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+
+.eventAdd input{
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid midnightblue;
+    margin: 3px;
+}
+
+.eventAdd span{
+    font-size: 1.5em;
+    padding: 3px;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+.eventAdd td{
+    border: 1px solid midnightblue;
+    margin: 2px;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 1.5em;
+}
+
+.eventAdd th{
+    background: midnightblue;
+    color: whitesmoke;
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+/*
+EVENT LIST
+ */
+.eventList td{
+    border: 1px solid midnightblue;
+    margin: 2px;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 1.5em;
+}
+
+.eventList th{
+    background: midnightblue;
+    color: whitesmoke;
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+
+.eventList table button{
+    background: #f5f5f5;
+    color: black;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 2em;
+    font-weight: 700;
+    width: 30px;
+}
+
+/*
+PAGE ELECTEUR
+ */
+
+h1.electeurTitle{
+    padding:10px;
+    font-size: 3em;
+    color: darkblue;
+}
+
+/*
+EVENT LIST VOTE
+ */
+
+.eventListVote td{
+    border: 1px solid midnightblue;
+    margin: 2px;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 1.5em;
+}
+
+.eventListVote th{
+    background: midnightblue;
+    color: whitesmoke;
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+
+.eventListVote table button{
+    background: #f5f5f5;
+    color: black;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+
+
+
