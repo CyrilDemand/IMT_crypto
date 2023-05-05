@@ -31,7 +31,7 @@ Lucas Senez : Liaison entre le Back et le Front
 ![Cover](https://github.com/NicolasBrondin/NicolasBrondin/blob/master/img/cover.jpg)
 
 Thomas Nigault : Back End
-![Cover](https://github.com/NicolasBrondin/NicolasBrondin/blob/master/img/cover.jpg)
+![Cover](https://cdn.discordapp.com/attachments/1102927913969533063/1104029862311772220/IMG_20230505_150008.jpg)
 
 Louis Clorennec : Back End
 ![Cover](https://github.com/NicolasBrondin/NicolasBrondin/blob/master/img/cover.jpg)
