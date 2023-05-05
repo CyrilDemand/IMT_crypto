@@ -5,7 +5,6 @@
 - Le Back est fonctionnel. Le contrat se déploie et il est possible de l'appeler.
 - Nous n'avons pas réussi la liasion entre le front et le back avec web3.js.
 - Le front est fonctionnel avec une page admin et une page electeur (vers lesquelles ont aurait été automatiquement redirigé si nous avons réussi à lier le front au back).
-- 
 
 ## Notre groupe
 
