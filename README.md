@@ -1,39 +1,53 @@
-# IMT_crypto
+# Application de votes
 
-`npm i` partout ou il y a un package.json (au cas ou)
+## État d'avancement
 
-commencer par installer et lancer ganache (dans un terminal a part)
-`npm install -g ganache`
-`ganache`
+- Le Back est fonctionnel. Le contrat se déploie et il est possible de l'appeler.
+- Nous n'avons pas réussi la liasion entre le front et le back avec web3.js.
+- Le front est fonctionnel avec une page admin et une page electeur (vers lesquelles ont aurait été automatiquement redirigé si nous avons réussi à lier le front au back).
+- 
 
-Compiler et migrer truffle
-dans le dossier truffle :
-`truffle compile`
-`truffle migrate`
+## Notre groupe
 
-lancer client web (dans un autre terminal)
-dans le dossier client :
-`npm start`
+Nous avons travaillé en méthode Scrum. Nous avons utilisé git pour gérer les versions.
 
+**Noé Delcroix** : Front End
+<br>
+<img src="./app/client/src/img/noe.png"  width="150" height="150">
 
------------------------Présentation du Groupe------------------------------
+**Cyril Demand** : Front End
+<br>
+<img src="./app/client/src/img/cyril.png"  width="150" height="150">
 
-Noé Delcroix : Front End
-![Cover](https://cdn.discordapp.com/attachments/1102927913969533063/1104028920078151680/IMG_20230505_144932.jpg)
+**Alexis Bourdarias** : Liaison entre le Back et le Front
+<br>
+<img src="./app/client/src/img/alexis.png"  width="150" height="150">
 
-Cyril Demand : Front End
-![Cover](https://cdn.discordapp.com/attachments/1102927913969533063/1104028919272837220/IMG_20230505_145454.jpg)
+**Lucas Senez** : Liaison entre le Back et le Front
+<br>
+<img src="./app/client/src/img/lucas.png"  width="150" height="150">
 
-Alexis Bourdarias : Liaison entre le Back et le Front
-![Cover](https://cdn.discordapp.com/attachments/1102927913969533063/1104028920346578984/IMG_20230505_144927.jpg)
+**Thomas Nigault** : Back End et Scrum Master
+<br>
+<img src="./app/client/src/img/thomas.png"  width="150" height="150">
 
-Lucas Senez : Liaison entre le Back et le Front
-![Cover](https://cdn.discordapp.com/attachments/1102927913969533063/1104028976311189535/IMG_20230505_145648.jpg)
+**Louis Clorennec** : Back End
+<br>
+<img src="./app/client/src/img/louis.png"  width="150" height="150">
 
-Thomas Nigault : Back End
-![Cover](https://cdn.discordapp.com/attachments/1102927913969533063/1104029862311772220/IMG_20230505_150008.jpg)
+## Instrutions pour lancer le projet en local
 
-Louis Clorennec : Back End
-![Cover](https://cdn.discordapp.com/attachments/1102927913969533063/1104028919616766043/IMG_20230505_145007.jpg)
+- `npm i` dans tous les dossiers où il y a un package.json
 
-Nous avons travaillé en méthode Scrum, nous avons utilisé git pour gérer les versions
+- Commencer par installer et lancer ganache (dans un terminal à part)<br>
+  `npm install -g ganache`
+  `ganache`
+
+- Compiler et migrer truffle<br>
+  dans le dossier truffle :
+  `truffle compile`
+  `truffle migrate`
+
+- lancer le client web (dans un autre terminal)<br>
+  dans le dossier client :
+  `npm start`
