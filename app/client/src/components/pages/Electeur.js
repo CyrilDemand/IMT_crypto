@@ -1,4 +1,6 @@
 import {Link} from "react-router-dom";
+import WhiteList from "../components2/WhiteList";
+import SessionListVote from "../components2/SessionListVote";
 
 function Electeur() {
     return (
@@ -12,6 +14,7 @@ function Electeur() {
                     <Link to="/">main</Link>
                 </li>
             </ul>
+            <SessionListVote></SessionListVote>
         </div>
     );
 }
